@@ -11,7 +11,7 @@ public class InPlaceSorts {
             while(j >= 0 && list1[j] > current)
             {
                 list1[j + 1] = list1[j];
-                j = j -1;
+                j = j - 1;
             }
             list1[j + 1] = current;
         }
@@ -71,6 +71,10 @@ public class InPlaceSorts {
 
     public void generateStrings(int n)
     {
+        String[] list1 = new String[n];
+        for(int i = 0; i < n; i++)
+        {
 
+        }
     }
 }
