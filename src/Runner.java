@@ -9,5 +9,8 @@ public class Runner {
         int[] arrayInt = list1.generateInts(6);
         list1.insertionSort(arrayInt);
         System.out.println(Arrays.toString(arrayInt));
+        double[] arrayDouble = list1.generateDoubles(6);
+        list1.selectionSort(arrayDouble);
+        System.out.println(Arrays.toString(arrayDouble));
     }
 }
