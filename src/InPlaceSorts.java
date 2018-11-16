@@ -6,32 +6,35 @@ public class InPlaceSorts {
     {
         for(int i = 1; i < list1.length; i++)
         {
-            int current = list1[i];
+            int min = list1[i];
             int j = i - 1;
-            while(j >= 0 && list1[j] > current)
+            while(j >= 0 && list1[j] > min)
             {
                 list1[j + 1] = list1[j];
                 j = j - 1;
             }
-            list1[j + 1] = current;
+            list1[j + 1] = min;
         }
     }
 
     public static void selectionSort(double[] list1)
     {
-        for(int i = 0; i < list1.length - 1; i++)
+        double min;
+        int pos;
+        for(int i = 0; i < list1.length; i++)
         {
-            int min = i;
-            for(int j = i + 1; j < list1.length; j++)
+            pos = i;
+            min = list1[i];
+            for(int j = i; j < list1.length; j++)
             {
-                if(list1[j] < list1[min])
+                if(list1[j] < min)
                 {
-                    min = (int)list1[j];
+                    pos = j;
+                    min = list1[j];
                 }
-                double temp = list1[min];
-                list1[min] = list1[i];
-                list1[i] = temp;
             }
+            list1[pos] = list1[i];
+            list1[i] = min;
         }
     }
 
