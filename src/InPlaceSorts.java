@@ -1,3 +1,4 @@
+import java.nio.charset.Charset;
 import java.util.Random;
 
 public class InPlaceSorts {
@@ -52,7 +53,7 @@ public class InPlaceSorts {
         }
     }
 
-    public void generateInts(int n)
+    public int[] generateInts(int n)
     {
         int[] list1 = new int[n];
         Random random = new Random();
@@ -60,9 +61,10 @@ public class InPlaceSorts {
         {
             list1[i] = random.nextInt(10000);
         }
+        return list1;
     }
 
-    public void generateDoubles(int n)
+    public double[] generateDoubles(int n)
     {
         double[] list1 = new double[n];
         Random random = new Random();
@@ -70,14 +72,35 @@ public class InPlaceSorts {
         {
             list1[i] = (random.nextDouble() * 10);
         }
+        return list1;
     }
 
-    public void generateStrings(int n)
+    public String[] generateStrings(int n)
     {
         String[] list1 = new String[n];
+        Random random = new Random();
+        String atoz = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         for(int i = 0; i < n; i++)
         {
-
+            byte[] array = new byte[random.nextInt(8) + 3];
+            new Random().nextBytes(array);
+            String generatedString = generateRandom(atoz);
+            list1[i] = generatedString;
         }
+        return list1;
     }
+
+    public String generateRandom(String atoz)
+    {
+        Random random = new Random();
+        StringBuilder res = new StringBuilder();
+        for(int i = 0; i < 7; i ++)
+        {
+            int rand = random.nextInt(atoz.length());
+            res.append(atoz.charAt(rand));
+        }
+        return res.toString();
+    }
+
+
 }
