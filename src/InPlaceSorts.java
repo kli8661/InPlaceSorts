@@ -1,4 +1,4 @@
-import java.nio.charset.Charset;
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class InPlaceSorts {
@@ -68,9 +68,10 @@ public class InPlaceSorts {
     {
         double[] list1 = new double[n];
         Random random = new Random();
+        DecimalFormat df = new DecimalFormat("#.###");
         for(int i = 0; i < n; i++)
         {
-            list1[i] = (random.nextDouble() * 10);
+            list1[i] = Double.valueOf(df.format((random.nextDouble() * 10)));
         }
         return list1;
     }
@@ -79,7 +80,7 @@ public class InPlaceSorts {
     {
         String[] list1 = new String[n];
         Random random = new Random();
-        String atoz = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String atoz = "abcdefghijklmnopqrstuvwxyz";
         for(int i = 0; i < n; i++)
         {
             byte[] array = new byte[random.nextInt(8) + 3];
@@ -101,6 +102,5 @@ public class InPlaceSorts {
         }
         return res.toString();
     }
-
 
 }
