@@ -15,5 +15,10 @@ public class Runner {
         System.out.println("Selection Sorting Doubles");
         list1.selectionSort(arrayDouble);
         System.out.println(Arrays.toString(arrayDouble));
+        InPlaceSorts list2 = new InPlaceSorts();
+        int[] arrayIntMerge = list1.generateInts(10);
+        System.out.println("Merge Sorting Ints");
+        list2.mergeSort(arrayIntMerge);
+        System.out.println(Arrays.toString(arrayIntMerge));
     }
 }

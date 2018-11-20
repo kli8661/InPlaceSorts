@@ -18,6 +18,61 @@ public class InPlaceSorts {
         }
     }
 
+    public static void mergeSort(int[] list1)
+    {
+        int n = list1.length;
+        int[] temp = new int[n];
+        mergeSortHelper(list1, 0, n-1, temp);
+    }
+
+    public static void mergeSortHelper(int[] list1, int left, int right, int[] temp)
+    {
+        if(left < right)
+        {
+            int middle = (left + right) / 2;
+            mergeSortHelper(list1, left, middle, temp);
+            mergeSortHelper(list1, middle + 1, right, temp);
+            merge(list1, left, middle, right, temp);
+        }
+    }
+
+    public static void merge(int[] list1, int left, int middle, int right, int[] temp)
+    {
+        for(int i = left; i <= right; i++)
+        {
+            temp[i] = list1[i];
+        }
+        int i = left;
+        int j = middle + 1;
+        int k = left;
+        while(i <= middle && j <= right)
+        {
+            if(temp[i] < temp[j])
+            {
+                list1[k] = temp[i];
+                i++;
+            }
+            else
+            {
+                list1[k] = temp[j];
+                j++;
+            }
+            k++;
+        }
+        while(i <= middle)
+        {
+            list1[k] = temp[i];
+            k++;
+            i++;
+        }
+        while(j <= right)
+        {
+            list1[k] = temp[j];
+            k++;
+            j++;
+        }
+    }
+
     public static void selectionSort(double[] list1)
     {
         double min;
@@ -114,5 +169,4 @@ public class InPlaceSorts {
         }
         return res.toString();
     }
-
 }
