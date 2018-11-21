@@ -60,6 +60,7 @@ public class Runner {
         long totalTime = endTime - startTime;
         System.out.println(Arrays.toString(arrayStr));
         System.out.println("This operation took: " + totalTime/1000000 + " milliseconds.");
+
         size.close();
     }
 }
