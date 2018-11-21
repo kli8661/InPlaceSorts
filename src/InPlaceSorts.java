@@ -181,7 +181,7 @@ public class InPlaceSorts {
         Random random = new Random();
         for(int i = 0; i < n; i++)
         {
-            list1[i] = random.nextInt(1000000);
+            list1[i] = random.nextInt(1000000000);
         }
         return list1;
     }
@@ -193,7 +193,7 @@ public class InPlaceSorts {
         DecimalFormat df = new DecimalFormat("#.###");
         for(int i = 0; i < n; i++)
         {
-            list1[i] = Double.valueOf(df.format((random.nextDouble() * 10)));
+            list1[i] = Double.valueOf(df.format((random.nextDouble() * 100)));
         }
         return list1;
     }

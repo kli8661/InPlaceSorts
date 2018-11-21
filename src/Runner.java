@@ -7,7 +7,6 @@ public class Runner {
         InPlaceSorts list1 = new InPlaceSorts();
         InPlaceSorts list2 = new InPlaceSorts();
         Scanner size = new Scanner(System.in);
-        System.out.println("Array size has to be less than 1 million.");
         System.out.println("Sorting algorithms are ordered from fastest to slowest for your sanity.");
         System.out.println("Printed out the arrays are commented out, you can put the line back in if you want to see the array.");
 
