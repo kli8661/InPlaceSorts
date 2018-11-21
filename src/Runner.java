@@ -8,30 +8,10 @@ public class Runner {
         InPlaceSorts list2 = new InPlaceSorts();
         Scanner size = new Scanner(System.in);
         System.out.println("Array size has to be less than 1 million.");
-        System.out.println("Input array size.");
-        int arraysize = size.nextInt();
+        System.out.println("Sorting algorithms are ordered from fastest to slowest for your sanity.");
 
-        int[] arrayInt = list1.generateInts(arraysize);
-        System.out.println("Insertion Sorting Ints");
-        long startTime1 = System.nanoTime();
-        list1.insertionSort(arrayInt);
-        long endTime1 = System.nanoTime();
-        long totalTime1 = endTime1 - startTime1;
-        //System.out.println(Arrays.toString(arrayInt));
-        System.out.println("This operation took: " + totalTime1/1000000 + " milliseconds.");
-        System.out.println();
-
-        double[] arrayDouble = list1.generateDoubles(arraysize);
-        System.out.println("Selection Sorting Doubles");
-        long startTime2 = System.nanoTime();
-        list1.selectionSort(arrayDouble);
-        long endTime2 = System.nanoTime();
-        long totalTime2 = endTime2 - startTime2;
-        //System.out.println(Arrays.toString(arrayDouble));
-        System.out.println("This operation took: " + totalTime2/1000000 + " milliseconds.");
-        System.out.println();
-
-        int[] arrayIntMerge = list1.generateInts(arraysize);
+        System.out.println("Input array size for merge (int) sort.");
+        int[] arrayIntMerge = list1.generateInts(size.nextInt());
         System.out.println("Merge Sorting Ints");
         long startTime3 = System.nanoTime();
         list2.mergeSort(arrayIntMerge);
@@ -41,7 +21,8 @@ public class Runner {
         System.out.println("This operation took: " + totalTime3/1000000 + " milliseconds.");
         System.out.println();
 
-        String[] arrayMergeStrings = list2.generateStrings(arraysize);
+        System.out.println("Input array size for merge (string) sort.");
+        String[] arrayMergeStrings = list2.generateStrings(size.nextInt());
         System.out.println("Merge Sorting Strings");
         long startTime4 = System.nanoTime();
         list2.mergeSortStrings(arrayMergeStrings);
@@ -49,6 +30,28 @@ public class Runner {
         long totalTime4 = endTime4 - startTime4;
         //System.out.println(Arrays.toString(arrayMergeStrings));
         System.out.println("This operation took: " + totalTime4/1000000 + " milliseconds.");
+        System.out.println();
+
+        System.out.println("Input array size for insertion sort.");
+        int[] arrayInt = list1.generateInts(size.nextInt());
+        System.out.println("Insertion Sorting Ints");
+        long startTime1 = System.nanoTime();
+        list1.insertionSort(arrayInt);
+        long endTime1 = System.nanoTime();
+        long totalTime1 = endTime1 - startTime1;
+        //System.out.println(Arrays.toString(arrayInt));
+        System.out.println("This operation took: " + totalTime1/1000000 + " milliseconds.");
+        System.out.println();
+
+        System.out.println("Input array size for selection sort.");
+        double[] arrayDouble = list1.generateDoubles(size.nextInt());
+        System.out.println("Selection Sorting Doubles");
+        long startTime2 = System.nanoTime();
+        list1.selectionSort(arrayDouble);
+        long endTime2 = System.nanoTime();
+        long totalTime2 = endTime2 - startTime2;
+        //System.out.println(Arrays.toString(arrayDouble));
+        System.out.println("This operation took: " + totalTime2/1000000 + " milliseconds.");
         System.out.println();
 
         System.out.println("What array size do you want for bubble sort?");
