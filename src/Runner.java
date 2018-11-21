@@ -7,6 +7,7 @@ public class Runner {
         InPlaceSorts list1 = new InPlaceSorts();
         InPlaceSorts list2 = new InPlaceSorts();
         Scanner size = new Scanner(System.in);
+        System.out.println("Array size has to be less than 1 million.");
 
         System.out.println("Input array size for insertion sort.");
         int[] arrayInt = list1.generateInts(size.nextInt());
