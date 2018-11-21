@@ -17,7 +17,7 @@ public class Runner {
         list1.insertionSort(arrayInt);
         long endTime1 = System.nanoTime();
         long totalTime1 = endTime1 - startTime1;
-        System.out.println(Arrays.toString(arrayInt));
+        //System.out.println(Arrays.toString(arrayInt));
         System.out.println("This operation took: " + totalTime1/1000000 + " milliseconds.");
         System.out.println();
 
@@ -27,7 +27,7 @@ public class Runner {
         list1.selectionSort(arrayDouble);
         long endTime2 = System.nanoTime();
         long totalTime2 = endTime2 - startTime2;
-        System.out.println(Arrays.toString(arrayDouble));
+        //System.out.println(Arrays.toString(arrayDouble));
         System.out.println("This operation took: " + totalTime2/1000000 + " milliseconds.");
         System.out.println();
 
@@ -37,7 +37,7 @@ public class Runner {
         list2.mergeSort(arrayIntMerge);
         long endTime3 = System.nanoTime();
         long totalTime3 = endTime3 - startTime3;
-        System.out.println(Arrays.toString(arrayIntMerge));
+        //System.out.println(Arrays.toString(arrayIntMerge));
         System.out.println("This operation took: " + totalTime3/1000000 + " milliseconds.");
         System.out.println();
 
@@ -47,7 +47,7 @@ public class Runner {
         list2.mergeSortStrings(arrayMergeStrings);
         long endTime4 = System.nanoTime();
         long totalTime4 = endTime4 - startTime4;
-        System.out.println(Arrays.toString(arrayMergeStrings));
+        //System.out.println(Arrays.toString(arrayMergeStrings));
         System.out.println("This operation took: " + totalTime4/1000000 + " milliseconds.");
         System.out.println();
 
@@ -58,7 +58,7 @@ public class Runner {
         list1.bubbleSort(arrayStr);
         long endTime = System.nanoTime();
         long totalTime = endTime - startTime;
-        System.out.println(Arrays.toString(arrayStr));
+        //System.out.println(Arrays.toString(arrayStr));
         System.out.println("This operation took: " + totalTime/1000000 + " milliseconds.");
 
         size.close();
