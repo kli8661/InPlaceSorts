@@ -126,7 +126,7 @@ public class InPlaceSorts {
         Random random = new Random();
         for(int i = 0; i < n; i++)
         {
-            list1[i] = random.nextInt(10000);
+            list1[i] = random.nextInt(1000000000);
         }
         return list1;
     }
@@ -150,7 +150,7 @@ public class InPlaceSorts {
         String atoz = "abcdefghijklmnopqrstuvwxyz";
         for(int i = 0; i < n; i++)
         {
-            byte[] array = new byte[random.nextInt(8) + 3];
+            byte[] array = new byte[random.nextInt(5) + 3];
             new Random().nextBytes(array);
             String generatedString = generateRandom(atoz);
             list1[i] = generatedString;
