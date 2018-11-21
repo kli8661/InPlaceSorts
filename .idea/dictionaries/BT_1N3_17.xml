@@ -4,6 +4,8 @@
       <w>abcdefghijklmnopqrstuvwxyz</w>
       <w>arraysize</w>
       <w>atoz</w>
+      <w>strmiddle</w>
+      <w>tempstring</w>
     </words>
   </dictionary>
 </component>

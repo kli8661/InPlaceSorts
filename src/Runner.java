@@ -42,6 +42,17 @@ public class Runner {
         System.out.println("This operation took: " + totalTime3/1000000 + " milliseconds.");
         System.out.println();
 
+        System.out.println("Input array size for merge sort (strings).");
+        String[] arrayMergeStrings = list2.generateStrings(size.nextInt());
+        System.out.println("Merge Sorting Strings");
+        long startTime4 = System.nanoTime();
+        list2.mergeSortStrings(arrayMergeStrings);
+        long endTime4 = System.nanoTime();
+        long totalTime4 = endTime4 - startTime4;
+        System.out.println(Arrays.toString(arrayMergeStrings));
+        System.out.println("This operation took: " + totalTime4/1000000 + " milliseconds.");
+        System.out.println();
+
         System.out.println("Input array size for bubble sort.");
         String[] arrayStr = list1.generateStrings(size.nextInt());
         System.out.println("Bubble Sorting Strings");
