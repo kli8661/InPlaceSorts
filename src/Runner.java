@@ -10,6 +10,16 @@ public class Runner {
         System.out.println("Sorting algorithms are ordered from fastest to slowest for your sanity.");
         System.out.println("Printed out the arrays are commented out, you can put the line back in if you want to see the array.");
 
+        System.out.println("Input array size for quick sort (int).");
+        int[] arrayIntQuick = list2.generateInts(size.nextInt());
+        System.out.println("Quick Sorting Ints");
+        long starttime = System.nanoTime();
+        list2.quickSort(arrayIntQuick,1,5);
+        long endtime = System.nanoTime();
+        long totaltime = endtime - starttime;
+        System.out.println("This operation took: " + totaltime/1000000 + " milliseconds.");
+        System.out.println();
+
         System.out.println("Input array size for merge (int) sort.");
         int[] arrayIntMerge = list1.generateInts(size.nextInt());
         System.out.println("Merge Sorting Ints");
