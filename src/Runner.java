@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Runner {
@@ -14,7 +13,7 @@ public class Runner {
         int[] arrayIntQuick = list2.generateInts(size.nextInt());
         System.out.println("Quick Sorting Ints");
         long starttime = System.nanoTime();
-        list2.quickSort(arrayIntQuick,1,5);
+        list2.quickSort(arrayIntQuick,1,arrayIntQuick.length-1);
         long endtime = System.nanoTime();
         long totaltime = endtime - starttime;
         System.out.println("This operation took: " + totaltime/1000000 + " milliseconds.");
