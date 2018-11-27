@@ -4,10 +4,13 @@
       <w>abcdefghijklmnopqrstuvwxyz</w>
       <w>arraysize</w>
       <w>atoz</w>
+      <w>endtime</w>
+      <w>starttime</w>
       <w>strleft</w>
       <w>strmiddle</w>
       <w>strright</w>
       <w>tempstring</w>
+      <w>totaltime</w>
     </words>
   </dictionary>
 </component>

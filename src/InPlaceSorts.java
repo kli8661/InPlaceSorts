@@ -34,14 +34,17 @@ public class InPlaceSorts {
         int i = left -1;
         for(int j = left; j < right; j++)
         {
-            i++;
-            int temp = arr[j];
-            arr[j] = arr[i];
-            arr[i] = temp;
+            if(arr[j] <= pivot)
+            {
+                i++;
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
         }
-        int temp = pivot;
+        int temp2 = arr[right];
         arr[right] = arr[i + 1];
-        arr[i + 1] = temp;
+        arr[i + 1] = temp2;
         return i + 1;
     }
 
