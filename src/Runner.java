@@ -19,6 +19,16 @@ public class Runner {
         System.out.println("This operation took: " + totaltime/1000000 + " milliseconds.");
         System.out.println();
 
+        System.out.println("Input array size for quick sort (str).");
+        String[] arrayStrQuick = list2.generateStrings(size.nextInt());
+        System.out.println("Quick Sorting Strings");
+        long starttime1 = System.nanoTime();
+        list2.quickSortStr(arrayStrQuick,1,arrayStrQuick.length-1);
+        long endtime1 = System.nanoTime();
+        long totaltime1 = endtime1 - starttime1;
+        System.out.println("This operation took: " + totaltime1/1000000 + " milliseconds.");
+        System.out.println();
+
         System.out.println("Input array size for merge (int) sort.");
         int[] arrayIntMerge = list1.generateInts(size.nextInt());
         System.out.println("Merge Sorting Ints");
