@@ -1,7 +1,90 @@
 import java.text.DecimalFormat;
 import java.util.Random;
 
+import static java.lang.Integer.min;
+
 public class InPlaceSorts {
+
+    /**
+     * Insertion Sort for the TimSort
+     * @param arr array to be inputted.
+     * @param left self explanatory
+     * @param right self explanatory
+     */
+    public void insertionSort3(int arr[], int left, int right)
+    {
+        for (int i = left + 1; i <= right; i++)
+        {
+            int temp = arr[i];
+            int j = i - 1;
+            while (j >= left && arr[j] > temp)
+            {
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = temp;
+        }
+    }
+
+    /**
+     * Merge sort for the TimSort.
+     * @param arr array to be inputted.
+     * @param l left.
+     * @param m middle.
+     * @param r right.
+     */
+    void merge3(int arr[], int l, int m, int r)
+    {
+        int len1 = m - l + 1;
+        int len2 = r - m;
+        int[] left = new int[len1];
+        int[] right = new int[len2];
+        for (int i = 0; i < len1; i++) {
+            left[i] = arr[l + i];
+        }
+        for (int i = 0; i < len2; i++) {
+            right[i] = arr[m + 1 + i];
+        }
+
+        int i = 0;
+        int j = 0;
+        int k = l;
+
+        while (i < len1 && j < len2)
+        {
+            if (left[i] <= right[j])
+            {
+                arr[k] = left[i];
+                i++;
+            }
+            else {
+                arr[k] = right[j];
+                j++;
+            }
+            k++;
+        }
+    }
+
+    /**
+     * TimSort
+     * @param arr array to be inputted.
+     * @param n size of the array to be sorted.
+     */
+    public void timSort3(int arr[], int n)
+    {
+        for (int i = 0; i < n; i+=32) {
+            insertionSort3(arr, i, min((i + 31), (n - 1)));
+        }
+        for (int size = 32; size < n; size = 2*size)
+        {
+            for (int left = 0; left < n; left += 2*size)
+            {
+                int mid = left + size - 1;
+                int right = min((left + 2*size - 1), (n-1));
+                merge3(arr, left, mid, right);
+            }
+        }
+    }
 
     public static void insertionSort(int[] list1)
     {
@@ -242,7 +325,7 @@ public class InPlaceSorts {
         Random random = new Random();
         for(int i = 0; i < n; i++)
         {
-            list1[i] = random.nextInt(1000000000);
+            list1[i] = random.nextInt(100000);
         }
         return list1;
     }
