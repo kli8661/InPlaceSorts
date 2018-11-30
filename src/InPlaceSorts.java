@@ -5,6 +5,8 @@ import static java.lang.Integer.min;
 
 public class InPlaceSorts {
 
+    private int RUN = 128;
+
     /**
      * Insertion Sort for the TimSort
      * @param arr array to be inputted.
@@ -20,7 +22,7 @@ public class InPlaceSorts {
             while (j >= left && arr[j] > temp)
             {
                 arr[j+1] = arr[j];
-                j--;
+                j = j - 1;
             }
             arr[j+1] = temp;
         }
@@ -72,14 +74,14 @@ public class InPlaceSorts {
      */
     public void timSort3(int arr[], int n)
     {
-        for (int i = 0; i < n; i+=32) {
-            insertionSort3(arr, i, min((i + 31), (n - 1)));
+        for (int i = 0; i < n; i+=RUN) {
+            insertionSort3(arr, i, min((i + 127), (n - 1)));
         }
-        for (int size = 32; size < n; size = 2*size)
+        for (int size = RUN; size < n; size = 2*size)
         {
             for (int left = 0; left < n; left += 2*size)
             {
-                int mid = left + size - 1;
+                int mid = (left + size) -1;
                 int right = min((left + 2*size - 1), (n-1));
                 merge3(arr, left, mid, right);
             }

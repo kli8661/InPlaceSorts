@@ -15,7 +15,7 @@ public class Runner {
         System.out.println("Tim Sorting Ints");
         int[] arrayIntTim = list2.generateInts(temp);
         long starttime3 = System.nanoTime();
-        list2.timSort3(arrayIntTim,1000);
+        list2.timSort3(arrayIntTim,4096);
         long endtime3 = System.nanoTime();
         long totaltime3 = endtime3 - starttime3;
         System.out.println("This operation took: " + totaltime3/1000000 + " milliseconds.");
